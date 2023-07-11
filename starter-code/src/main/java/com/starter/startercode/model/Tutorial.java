@@ -18,6 +18,8 @@ public class Tutorial {
     
     @Id // Specifying that it is an Primary Key
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // tells the db the column is of auto increment	
+	// @GeneratedValue(strategy = GenerationType.AUTO) // This courses an issue as it generates another table with _seq
+    // The above checks in the column called Id and makes sure there isn't such a value
     private long id; // defining the type.
 
     @Column(name = "title") // Specifying that this is a column in the table
