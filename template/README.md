@@ -16,7 +16,7 @@ The template is based on an ERD diagram that has all 3 types of relationships 1-
 Below is an ERD diagram that was implemented in this template
 
 <p align="center">
-  <img src="./template-erd.JPG" width="300" title="hover text">
+  <img src="./images/template-erd.JPG" width="300" title="hover text">
 </p>
 
 ## Getting Started
@@ -39,3 +39,4 @@ Clone this template branch from our repository
 
 Run the application and play around with the code
 
+If you wish to build it from scratch read the [process.md](./Process.md) file
