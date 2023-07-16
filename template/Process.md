@@ -173,18 +173,4 @@ Below is a code snippet of how get works
     Note we are currently using an exception I found in a tutorial 
     we will come later to create a custom error handler.
 
-## Relationships
-
-There are different types of relationships as define, we will cover how we can write our models in order to make these relationships.
-
-### One to one 
-
-<img src="./images/model1-1.JPG" width="320" title="hover text"> 
-
-### One to Many
-
-<img src="./images/model1-many.JPG" width="320" title="hover text"> 
-
-### Many to Many 
-
-<img src="./images/modelmany-many.JPG" width="480" title="hover text"> 
+Read on how to create relationships between tables [here](./Relationships.md)

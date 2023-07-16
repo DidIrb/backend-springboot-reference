@@ -3,7 +3,7 @@ package com.template.example.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "model")
+@Table(name = "models")
 public class Models {
 
     // Generating the Primary Key
@@ -15,6 +15,10 @@ public class Models {
     // Column value.
     @Column(name = "col1", nullable=false)
     private String col1;
+
+    // joining the tables 
+    @OneToOne(mappedBy = "models") // table it is connected to 
+    private Model4 model4;
 
     // Default Constructor
 
