@@ -47,6 +47,16 @@ public class ModelControllers {
 
     }
 
+    @GetMapping("/model/{mid}")
+    public ResponseEntity<Models> getModelsById(@PathVariable("mid") long mid) {
+        
+        Models _model = modelRepository.findById(mid)
+                .orElseThrow(() -> new ResourceNotFoundException("The item with the id : " + mid + " Was not found!!"));
+
+        return new ResponseEntity<>(_model, HttpStatus.OK);
+
+    }
+
     // CREATE / POST REQUESTS
     @PostMapping("/model")
     public ResponseEntity<Models> addUser(@RequestBody Models modelRequest) {

@@ -11,6 +11,8 @@ public interface ModelsRepository
 extends JpaRepository<Models, Long> {
     // The method below will generate a list of type Models
     List<Models> findByCol1(String col1); 
+
+    List<Models> findByMid(Long mid);  
     // it will make a request to the database 
     // checking if the column, col1 has a value passed in the controller
 }

@@ -46,7 +46,7 @@ Example in code
 
     }
 
-Refer to the [model example](../template/src/main/java/com/template/example/models/Model.java) itself for the real code.
+Refer to the [model example](../template/src/main/java/com/template/example/models/Models.java) itself for the real code.
 
 How you create the primary key column
 
@@ -70,7 +70,7 @@ Create, Read, Update, Delete Requests, is an acronym for CRUD, Using JPA, to do 
 - Generate the package called repository/s
 - Generate a file called repositoryName - in this case our file will be called ModelRepository.java
 
-Define our model repository Like so,[ refer here](../template/src/main/java/com/template/example/repository/ModelRepository.java).
+Define our model repository Like so,[ refer here](../template/src/main/java/com/template/example/repository/ModelsRepository.java).
 
     // imports here
 
