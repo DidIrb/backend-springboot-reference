@@ -15,5 +15,7 @@ extends JpaRepository<Models, Long> {
     List<Models> findByMid(Long mid);  
     // it will make a request to the database 
     // checking if the column, col1 has a value passed in the controller
+
+    List<Models> findModel3sByModel3sM3id(Long Model3sId);
 }
 

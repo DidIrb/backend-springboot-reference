@@ -109,4 +109,69 @@ Generate the controller and add the code shown [here]()
 
 ### Many to Many 
 
+when dealing with many to many relationships to avoid empty fields in our database we create a join table.
+
 <img src="./images/modelmany-many.JPG" width="480" title="hover text"> 
+
+Lets get started
+generate the model3 table through model
+
+say you have two tables  that is 
+
+    Define the following in one table  
+
+    // PK
+    // Other tables
+    @ManyToMany(fetch = FetchType.LAZY,
+        cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+        },
+        mappedBy = "tags")
+    @JsonIgnore
+    private Set<Tutorial> tutorials = new HashSet<>();
+
+    // constructors
+    // getters and setters
+    // also add a
+
+And add this to another table
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = {
+        CascadeType.PERSIST,
+        CascadeType.MERGE
+    })
+    @JoinTable(name = "tutorial_tags", joinColumns = { 
+        @JoinColumn(name = "tutorial_id") }, inverseJoinColumns = {
+            @JoinColumn(name = "tag_id") })
+    private Set<Tag> tags = new HashSet<>();
+
+    // YOU ALSO MUST ADD THIS CONSTRUCTOR IN YOUR MODEL
+     
+    public void addTag(Tag tag) {
+            this.tags.add(tag);
+            tag.getDocuments().add(this);
+    }
+
+
+### NOTE
+
+In order to implement the a datatype of enum, follow the process:
+
+generate enumTypes package
+generate the columnTypes.java file 
+write this code in it
+
+    public enum Col3Types {
+        Val1,Val2,Val3
+    }
+
+Refer to the files listed below:
+
+- [models3](./src/main/java/com/template/example/models/Model3.java)
+- [models](./src/main/java/com/template/example/models/Models.java)
+- [modelsController](./src/main/java/com/template/example/controllers/ModelControllers.java)
+- [model3Controller](./src/main/java/com/template/example/controllers/Models3Controllers.java)
+- [modelsRepository](./src/main/java/com/template/example/repository/ModelsRepository.java)
+- [model3Repository](./src/main/java/com/template/example/repository/Model3Repository.java)
+
